@@ -36,16 +36,16 @@ function App() {
   }
   return (
     <>
-    <Router>
+    <Router basename = "/textutils">
     <Navbar title = "TestUtils1" mode = {mode}  toggleMode={toggleMode}/>
     <Alert alert = {alert}/>
     <div className='container'>
    
     <Routes>
-    <Route path="/about" element={<About mode = {mode}/>} />
-    <Route path="/" element={<TextForm heading = "Enter The Text You Want To Experiment With" mode={mode} showAlert ={showAlert} />} />
+    <Route exact path="/about" element={<About mode = {mode}/>} />
+    <Route path="/textutils" element={<TextForm heading = "Enter The Text You Want To Experiment With" mode={mode} showAlert ={showAlert} />} />
     </Routes>
-      </div>
+      </div> 
       </Router>
     
     </>
