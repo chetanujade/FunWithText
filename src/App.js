@@ -1,11 +1,11 @@
-
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { HashRouter, Routes, Route } from "react-router-dom";
+
 
 
 function App() {
@@ -36,18 +36,18 @@ function App() {
   }
   return (
     <>
-    <Router basename = "/textutils">
-    <Navbar title = "TestUtils1" mode = {mode}  toggleMode={toggleMode}/>
-    <Alert alert = {alert}/>
-    <div className='container'>
-   
-    <Routes>
-    <Route exact path="/about" element={<About mode = {mode}/>} />
-    <Route path="/textutils" element={<TextForm heading = "Enter The Text You Want To Experiment With" mode={mode} showAlert ={showAlert} />} />
-    </Routes>
-      </div> 
-      </Router>
     
+    <HashRouter basename = "/">
+    
+      <Navbar title = "TestUtils1" mode = {mode}  toggleMode={toggleMode}/>
+      <Alert alert = {alert}/>
+      <div className='container'>
+      <Routes>
+      <Route path="/about" element={<About mode = {mode}/>} />
+      <Route path="/" element={<TextForm heading = "Enter The Text You Want To Experiment With" mode={mode} showAlert ={showAlert} />} />
+       </Routes>
+      </div>
+   </HashRouter>
     </>
   );
 }
