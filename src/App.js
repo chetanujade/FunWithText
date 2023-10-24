@@ -39,12 +39,12 @@ function App() {
     
     <HashRouter basename = "/">
     
-      <Navbar title = "TestUtils1" mode = {mode}  toggleMode={toggleMode}/>
+      <Navbar title = "TestUtils" mode = {mode}  toggleMode={toggleMode}/>
       <Alert alert = {alert}/>
       <div className='container'>
       <Routes>
       <Route path="/about" element={<About mode = {mode}/>} />
-      <Route path="/" element={<TextForm heading = "Enter The Text You Want To Experiment With" mode={mode} showAlert ={showAlert} />} />
+      <Route path="/" element={<TextForm heading = "Try TextUtils- Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert ={showAlert} />} />
        </Routes>
       </div>
    </HashRouter>
